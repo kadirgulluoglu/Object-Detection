@@ -11,7 +11,7 @@
 **There are 4 options on the main page.** </br>
 
 1- Object Detection
-2- Money Detection(Only Turkish Lira)
+2- Money Detection(Turkish lira only) 
 3- Fruit Detection
 4- Text Recognition
 
