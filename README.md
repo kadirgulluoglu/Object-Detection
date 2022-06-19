@@ -1,2 +1,4 @@
 # Object-Detection
- object recognition with flutter. using tflite library
+## Object Recognition with Flutter. Using tflite library
+
+![Splash screen](https://github.com/kadirgulluoglu/Object-Detection/blob/main/assets/screenshot/splashscreen.png)
