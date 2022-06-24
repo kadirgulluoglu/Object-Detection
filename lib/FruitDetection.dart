@@ -142,45 +142,8 @@ class _FruitDetectionState extends State<FruitDetection> {
                     itemCount: _currentRecognition.length,
                     itemBuilder: (context, index) {
                       if (_currentRecognition.length > index) {
-                        return Container(
-                          height: 40,
-                          child: Row(
-                            children: <Widget>[
-                              Container(
-                                padding: EdgeInsets.only(
-                                    left: _padding, right: _padding),
-                                width: _labelWitdth,
-                                child: Text(
-                                  _currentRecognition[index]['label'],
-                                  maxLines: 1,
-                                  style: TextStyle(
-                                      color: Colors.white, fontSize: 22),
-                                ),
-                              ),
-                              Container(
-                                height: 8,
-                                width: _width * 0.45,
-                                child: LinearProgressIndicator(
-                                  backgroundColor: Colors.transparent,
-                                  value: _currentRecognition[index]
-                                      ['confidence'],
-                                ),
-                              ),
-                              Container(
-                                width: _labelConfidence,
-                                child: Text(
-                                  (_currentRecognition[index]['confidence'] *
-                                              100)
-                                          .toStringAsFixed(0) +
-                                      '%',
-                                  maxLines: 12,
-                                  style: TextStyle(
-                                      color: Colors.white, fontSize: 16),
-                                ),
-                              )
-                            ],
-                          ),
-                        );
+                        return ViewResult(_padding, _labelWitdth, index, _width,
+                            _labelConfidence);
                       } else {
                         return Container();
                       }
@@ -198,6 +161,44 @@ class _FruitDetectionState extends State<FruitDetection> {
             ],
           ),
         ),
+      ),
+    );
+  }
+
+  Container ViewResult(double _padding, double _labelWitdth, int index,
+      double _width, double _labelConfidence) {
+    return Container(
+      height: 40,
+      child: Row(
+        children: <Widget>[
+          Container(
+            padding: EdgeInsets.only(left: _padding, right: _padding),
+            width: _labelWitdth,
+            child: Text(
+              _currentRecognition[index]['label'],
+              maxLines: 1,
+              style: TextStyle(color: Colors.white, fontSize: 22),
+            ),
+          ),
+          Container(
+            height: 8,
+            width: _width * 0.45,
+            child: LinearProgressIndicator(
+              backgroundColor: Colors.transparent,
+              value: _currentRecognition[index]['confidence'],
+            ),
+          ),
+          Container(
+            width: _labelConfidence,
+            child: Text(
+              (_currentRecognition[index]['confidence'] * 100)
+                      .toStringAsFixed(0) +
+                  '%',
+              maxLines: 12,
+              style: TextStyle(color: Colors.white, fontSize: 16),
+            ),
+          )
+        ],
       ),
     );
   }
