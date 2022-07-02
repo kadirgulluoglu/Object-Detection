@@ -39,7 +39,6 @@ dependencies:
   tflite: ^1.1.2
   image_picker:
   google_ml_kit:
-  flutter_tts:
 dev_dependencies:
   flutter_test:
     sdk: flutter
